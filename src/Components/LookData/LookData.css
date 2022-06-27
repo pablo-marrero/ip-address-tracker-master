@@ -87,5 +87,6 @@
 
     .container-data>div>div>p:last-child{
         font-size: calc(.9rem + .5vw);
+        text-align: center;
     }
 }

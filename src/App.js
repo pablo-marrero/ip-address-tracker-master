@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Navigate, Routes } from 'react-router-dom';
 import { Header } from './Components/Header/Header';
 import { LookData } from './Components/LookData/LookData';
 import { SectionMap } from './Components/SectionMap/SectionMap';
@@ -8,15 +9,18 @@ function App() {
 //Listo la configuracion del store. Se puede comenzar el proyecto :D
 
   return (
-    <div>
-      <Header/>
-      <LookData/>
-      <SectionMap/>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Navigate to="/home"/>}>
+        </Route>
+
+        <Route path="/home" element={[<Header key={"header"}/>,<LookData key={"lookData"}/>,<SectionMap key={"sectionMap"}/>]}/>
+
+        </Routes>
+      </Router>
+    </>
   );
 }
-//Password api : geo.ipigy
-//RGiDL68qKqrZk2i
-
-
 export default App;
+
