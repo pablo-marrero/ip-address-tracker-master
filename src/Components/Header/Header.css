@@ -1,0 +1,28 @@
+.container-header{
+    width: 100vw;
+    height: 30vh;
+    padding-top: 3%;
+    background-image: url("../../../images/pattern-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-header>h1{
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 2%;
+    font-weight: 500;
+    color: white;
+}
+
+@media (max-width:425px){
+
+    .container-header{
+        padding-top: 5%;
+    }
+    .container-header>h1{
+        font-size: 20px;
+        margin-bottom: 5%;
+    }
+}

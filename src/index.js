@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StoreProvider } from './Context/store';
+import { initialStateIP } from './ContentReducer/Reducer/Reducer';
+import reducer from './ContentReducer/Reducer/Reducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider initialState={initialStateIP} reducer={reducer}>
+      <App />
+    </StoreProvider>
   </React.StrictMode>
 );
 

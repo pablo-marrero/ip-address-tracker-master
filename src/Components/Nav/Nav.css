@@ -1,0 +1,84 @@
+.container-nav{
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+.container-nav>form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container-nav>form>input{
+    line-height: 40px;
+    width: 90%;
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    padding-left: 5%;
+    font-size: 18px;
+}
+.container-nav>form>input:focus{
+    outline: none;
+}
+
+
+.container-nav>form>button{
+    height: 42px;
+    width: 10%;
+    border: none;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    color: white;
+    background-color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.container-nav>form>button>div{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+
+.container-nav>form>button>div:first-child{
+    transform: rotate(-57deg);
+    transform-origin: top;
+}
+.container-nav>form>button>div:last-child{
+    transform: rotate(57deg);
+    transform-origin: bottom;
+}
+
+@media (max-width:768px){
+    .container-nav>form>input{
+        line-height: 34px;
+        font-size: 14px;
+    }
+    .container-nav>form>button{
+        height: 36px;
+    }
+
+    .container-nav>form>button>div{
+        top:30%;
+        left: 30%;
+    }
+}
+
+@media (max-width:425px){
+    .container-nav{
+        width: 80%;
+    }
+    .container-nav>form>input{
+        line-height:40px;
+        width: 85%;
+    }
+    .container-nav>form>button{
+        height: 42px;
+        width: 15%;
+    }
+}
