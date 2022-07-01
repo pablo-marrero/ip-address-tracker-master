@@ -7,3 +7,20 @@
     height:auto;
     margin: auto;
 }
+
+@media(max-width:650px){
+    .formu{
+        width:60%;
+    }   
+}
+@media(max-width:480px){
+    .formu{
+        width:70%;
+    }   
+}
+
+@media(max-width:375px){
+    .formu{
+        width:84%;
+    }   
+}

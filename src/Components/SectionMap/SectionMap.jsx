@@ -15,6 +15,8 @@ export const SectionMap = () => {
 
   useEffect(()=>{
     if(state.dataIp){
+
+      console.log(state.dataIp)
       setLocation({
         lati:state.dataIp.location.lat,
         long:state.dataIp.location.lng

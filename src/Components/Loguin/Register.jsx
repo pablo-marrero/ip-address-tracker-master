@@ -12,7 +12,7 @@ export const Register = () => {
         password:""
     })
     const navigate = useNavigate()
-    const { signup } = useAuth()
+    const { signup, loginWithGoogle } = useAuth()
 
     const handelChange = (e)=>{
         setRegister({
@@ -34,6 +34,17 @@ export const Register = () => {
     const goLogin = (e)=>{
       e.preventDefault()
       navigate("/login")
+    }
+
+    const handelLoguinGoogle = async (e)=>{
+      e.preventDefault()
+      try {
+        await loginWithGoogle()
+        navigate("/")
+      } catch (error) {
+        console.log(error)
+      }
+      
     }
 
   return (
@@ -59,6 +70,11 @@ export const Register = () => {
             <Button variant="" onClick={goLogin}>
                 I have account
             </Button>
+        </div>
+        <div className='d-flex justify-content-center mt-4'>
+        <Button variant="primary" type="submit" onClick={handelLoguinGoogle}>
+            Loguin with Google 
+        </Button>
         </div>
    </Form>
    </div>
