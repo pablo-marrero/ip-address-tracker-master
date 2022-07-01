@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from './Context/store';
+import { AuthProvider } from './Context/AuthContext';
 import { initialStateIP } from './ContentReducer/Reducer/Reducer';
 import reducer from './ContentReducer/Reducer/Reducer';
 
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <StoreProvider initialState={initialStateIP} reducer={reducer}>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </StoreProvider>
   </React.StrictMode>
 );

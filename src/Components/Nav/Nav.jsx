@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { clearDataIp, getData } from '../../ContentReducer/Action/Action'
 import { useStore } from "../../Context/store.js"
+import { useAuth } from '../../Context/AuthContext'
 import "./Nav.css"
 
 export const Nav = () => {
   //Example : https://geo.ipify.org/api/v2/country,city?apiKey=apiKey&ipAddress=8.8.8.8
 
   const [state,dispatch] = useStore()
-  const apiKey = "at_FJYOK3G2qxGCwPj2nzvrwFSwZCfFD"
+  const apiKey = "at_XFilr7eiAJJP12CMGdWWV3D0X7OCA"
   const [ipAddress, setIpAddress] = useState("")
   const [error, setError] = useState("")
+  const {user} = useAuth()
 
   const handleChange = (e)=>{
     e.preventDefault()
@@ -23,7 +25,7 @@ export const Nav = () => {
     ){
         try {
          clearDataIp(dispatch)
-          getData(dispatch,`https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipAddress}`)
+          getData(dispatch,ipAddress)
         } catch (error) {
           console.log(error)
         }
@@ -33,10 +35,11 @@ export const Nav = () => {
     }
   }
 
+  
+
   useEffect(()=>{
     getData(dispatch,`https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipAddress}`)
   },[])
-
 
   return (
     <nav className='container-nav'>
@@ -49,6 +52,9 @@ export const Nav = () => {
         </form>
         {state.msgError && <p>{state.msgError}</p>}
         {error && <p>{error}</p>}
+
+        {/* <button >Logout</button>
+        <button onClick={lookUser}>mostrar User</button> */}
     </nav>
   )
 }

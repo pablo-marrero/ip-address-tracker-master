@@ -20,7 +20,7 @@ export const SectionMap = () => {
         long:state.dataIp.location.lng
       })
     }
-  },[state])
+  },[state])//-34.8016248,-58.2527498
 
   return (
     <section className='container-map'>
